@@ -15,6 +15,12 @@ MonoBehaviour:
     floatVariables: []
     intVariables:
     - useVariable: 1
+      name: Left_Turns
+      tooltip: 
+      showInInspector: 0
+      networkSync: 0
+      value: 40
+    - useVariable: 1
       name: Max_Point_Empty_Num
       tooltip: 
       showInInspector: 0
@@ -71,5 +77,5 @@ MonoBehaviour:
     enumVariables: []
     categories:
     - 
-    variableCategoryIDs: 00000000000000000000000000000000000000000000000000000000
+    variableCategoryIDs: 0000000000000000000000000000000000000000000000000000000000000000
   events: []
