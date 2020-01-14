@@ -265,6 +265,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1658360744339636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4571883621049210}
+  m_Layer: 0
+  m_Name: PlayerDestination
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1667673067573888
 GameObject:
   m_ObjectHideFlags: 1
@@ -350,11 +365,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1106196414601246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 9}
   m_LocalScale: {x: 50, y: 90, z: 1}
   m_Children: []
-  m_Father: {fileID: 4329726774325232}
-  m_RootOrder: 1
+  m_Father: {fileID: 4466478913920440}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4023156756723520
 Transform:
@@ -368,6 +383,7 @@ Transform:
   m_Children:
   - {fileID: 4049639761207534}
   - {fileID: 4772387245192512}
+  - {fileID: 4571883621049210}
   - {fileID: 224168919149332720}
   - {fileID: 4754230636017594}
   m_Father: {fileID: 0}
@@ -410,11 +426,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4466478913920440}
-  - {fileID: 4022217180223762}
+  m_Children: []
   m_Father: {fileID: 4772387245192512}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4466478913920440
 Transform:
@@ -425,9 +439,23 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4329726774325232}
+  m_Children:
+  - {fileID: 4022217180223762}
+  m_Father: {fileID: 4772387245192512}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4571883621049210
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1658360744339636}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4023156756723520}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4720884104136354
 Transform:
@@ -453,7 +481,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4023156756723520}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4772387245192512
 Transform:
@@ -465,6 +493,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4466478913920440}
   - {fileID: 4329726774325232}
   m_Father: {fileID: 4023156756723520}
   m_RootOrder: 1
@@ -791,7 +820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.90196085, g: 0.8431373, b: 0.96470594, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1034,18 +1063,34 @@ MonoBehaviour:
         - HutongGames.PlayMaker.Actions.IntAdd
         - HutongGames.PlayMaker.Actions.IntAdd
         - HutongGames.PlayMaker.Actions.SetPosition
+        - HutongGames.PlayMaker.Actions.MoveObject
         customNames:
         - 
         - 
         - 
         - 
-        actionEnabled: 01010101
-        actionIsOpen: 00010100
-        actionStartIndex: 0000000005000000080000000b000000
-        actionHashCodes: 070f3000603dd905603dd905f6e5be03
+        - 
+        actionEnabled: 0101010101
+        actionIsOpen: 0000000101
+        actionStartIndex: 0000000005000000080000000b00000013000000
+        actionHashCodes: 070f3000603dd905603dd905f6e5be03c1edb801
         unityObjectParams: []
-        fsmGameObjectParams: []
+        fsmGameObjectParams:
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: {fileID: 1658360744339636}
         fsmOwnerDefaultParams:
+        - ownerOption: 1
+          gameObject:
+            useVariable: 0
+            name: 
+            tooltip: 
+            showInInspector: 0
+            networkSync: 0
+            value: {fileID: 1658360744339636}
         - ownerOption: 1
           gameObject:
             useVariable: 0
@@ -1074,6 +1119,24 @@ MonoBehaviour:
           value: 0
         - useVariable: 1
           name: PlayerY
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
+        - useVariable: 1
+          name: Player_speed
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 2
+        - useVariable: 1
+          name: 
           tooltip: 
           showInInspector: 0
           networkSync: 0
@@ -1134,6 +1197,12 @@ MonoBehaviour:
           showInInspector: 0
           networkSync: 0
           value: 0
+        - useVariable: 0
+          name: 
+          tooltip: 
+          showInInspector: 0
+          networkSync: 0
+          value: 0
         fsmVector2Params: []
         fsmVector3Params:
         - useVariable: 1
@@ -1145,13 +1214,14 @@ MonoBehaviour:
         fsmColorParams: []
         fsmRectParams: []
         fsmQuaternionParams: []
-        stringParams: []
-        byteData: 010000010000000000
+        stringParams:
+        - FINISHED
+        byteData: 0100000100000000000a00000001
         arrayParamSizes: 
         arrayParamTypes: []
         customTypeSizes: 
         customTypeNames: []
-        paramDataType: 1000000010000000100000000100000011000000100000001000000001000000100000001000000001000000140000001c0000000f0000000f0000000f000000070000000100000001000000
+        paramDataType: 1000000010000000100000000100000011000000100000001000000001000000100000001000000001000000140000001c0000000f0000000f0000000f00000007000000010000000100000014000000130000000f0000000f0000000f00000007000000110000001700000001000000
         paramName:
         - min
         - max
@@ -1172,8 +1242,17 @@ MonoBehaviour:
         - space
         - everyFrame
         - lateUpdate
-        paramDataPos: 00000000010000000200000000000000000000000300000004000000010000000500000006000000020000000000000000000000000000000100000002000000030000000700000008000000
-        paramByteDataSize: 00000000000000000000000001000000000000000000000000000000010000000000000000000000010000000000000000000000000000000000000000000000040000000100000001000000
+        - objectToMove
+        - destination
+        - time
+        - speed
+        - delay
+        - easeType
+        - reverse
+        - finishEvent
+        - realTime
+        paramDataPos: 0000000001000000020000000000000000000000030000000400000001000000050000000600000002000000000000000000000000000000010000000200000003000000070000000800000001000000000000000300000004000000050000000900000001000000000000000d000000
+        paramByteDataSize: 00000000000000000000000001000000000000000000000000000000010000000000000000000000010000000000000000000000000000000000000000000000040000000100000001000000000000000000000000000000000000000000000004000000000000000000000001000000
     events:
     - name: FINISHED
       isSystemEvent: 1
@@ -1183,7 +1262,13 @@ MonoBehaviour:
       isGlobal: 0
     globalTransitions: []
     variables:
-      floatVariables: []
+      floatVariables:
+      - useVariable: 1
+        name: Player_speed
+        tooltip: 
+        showInInspector: 0
+        networkSync: 0
+        value: 2
       intVariables:
       - useVariable: 1
         name: PlayerMove
@@ -1206,7 +1291,7 @@ MonoBehaviour:
       enumVariables: []
       categories:
       - 
-      variableCategoryIDs: 00000000
+      variableCategoryIDs: 0000000000000000
     description: 
     docUrl: 
     showStateLabel: 0
@@ -1216,7 +1301,7 @@ MonoBehaviour:
     locked: 0
     manualUpdate: 0
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     RestartOnEnable: 1
     EnableDebugFlow: 0
@@ -1520,7 +1605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.90303314, g: 0.8428309, b: 0.9632353, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3044,7 +3129,7 @@ RectTransform:
   - {fileID: 224159296783652394}
   - {fileID: 224778867508529020}
   m_Father: {fileID: 4023156756723520}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
